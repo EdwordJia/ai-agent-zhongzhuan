@@ -4,7 +4,7 @@ import { execSync } from 'child_process';
 import { prisma } from './prisma/client';
 import { app } from './app';
 
-const PORT = 3001;
+const PORT = parseInt(process.env.PORT || '3001', 10);
 
 async function ensureDatabase() {
   const dbUrl = process.env.DATABASE_URL || '';
