@@ -1,0 +1,91 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma-client"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model users {
+  id                Int      @id @default(autoincrement())
+  machine_id        String   @unique @db.VarChar(255)
+  points            Int      @default(0)
+  total_used        Int      @default(0)
+  free_daily_count  Int      @default(0)
+  created_at        DateTime @default(now())
+  updated_at        DateTime @updatedAt
+
+  redemption_logs   redemption_logs[]
+  generation_logs   generation_logs[]
+}
+
+model admins {
+  id            Int      @id @default(autoincrement())
+  username      String   @unique @db.VarChar(50)
+  password_hash String @db.VarChar(255)
+  role          String   @default("admin") @db.VarChar(20)
+  created_at    DateTime @default(now())
+}
+
+model redemption_codes {
+  id          Int      @id @default(autoincrement())
+  code        String   @unique @db.VarChar(16)
+  points      Int
+  total_uses  Int      @default(1)
+  used_count  Int      @default(0)
+  expires_at  DateTime?
+  is_active   Boolean  @default(true)
+  created_by  Int?
+  created_at  DateTime @default(now())
+
+  redemption_logs redemption_logs[]
+}
+
+model redemption_logs {
+  id            Int      @id @default(autoincrement())
+  code_id       Int
+  user_id       Int
+  points_before Int
+  points_after  Int
+  created_at    DateTime @default(now())
+
+  code redemption_codes @relation(fields: [code_id], references: [id])
+  user users @relation(fields: [user_id], references: [id])
+}
+
+model channels {
+  id              Int      @id @default(autoincrement())
+  name            String   @db.VarChar(100)
+  type            String   @db.VarChar(10)
+  gateway_url     String   @db.VarChar(500)
+  api_key         String?  @db.VarChar(500)
+  model           String   @db.VarChar(100)
+  cost_per_image  Int      @default(0)
+  daily_free_limit Int     @default(0)
+  is_active       Boolean  @default(true)
+  priority        Int      @default(1)
+  created_at      DateTime @default(now())
+  updated_at      DateTime @updatedAt
+
+  generation_logs generation_logs[]
+}
+
+model generation_logs {
+  id            Int      @id @default(autoincrement())
+  user_id       Int
+  channel_id    Int
+  prompt        String   @db.Text
+  n             Int      @default(1)
+  size          String?  @db.VarChar(50)
+  quality       String?  @db.VarChar(20)
+  status        String   @default("success") @db.VarChar(10)
+  points_cost   Int      @default(0)
+  image_urls    String?  @db.Text
+  error_msg     String?  @db.Text
+  created_at    DateTime @default(now())
+
+  user    users    @relation(fields: [user_id], references: [id])
+  channel channels @relation(fields: [channel_id], references: [id])
+}

@@ -1,6 +1,6 @@
-import { useCallback, useMemo } from "react";
+import { useCallback, useMemo, useEffect } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
-import { Nav, Layout, Button, Typography, Avatar, Tag } from "@douyinfe/semi-ui";
+import { Nav, Layout, Button, Typography, Avatar, Tag, Space } from "@douyinfe/semi-ui";
 import {
   LayoutDashboard,
   Package,
@@ -12,8 +12,10 @@ import {
   PanelLeftClose,
   PanelLeftOpen,
   Zap,
+  Coins,
 } from "lucide-react";
 import { useUIStore } from "../stores/uiStore";
+import { useUserStore } from "../stores/userStore";
 import ChatBox from "../components/ChatBox";
 
 const { Header, Sider, Content } = Layout;
@@ -76,6 +78,13 @@ export default function MainLayout() {
   const location = useLocation();
   const navigate = useNavigate();
   const { sidebarCollapsed, toggleSidebar, setActivePage } = useUIStore();
+  const userStore = useUserStore();
+
+  // Initialize user store on mount
+  useEffect(() => {
+    userStore.initMachine();
+    userStore.authMachine();
+  }, []);
 
   // 根据当前路径匹配导航项
   const activeKey = useMemo(() => {
@@ -137,6 +146,14 @@ export default function MainLayout() {
         </div>
 
         <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+          {userStore.isAuthenticated && (
+            <Space>
+              <Coins size={14} color="#f59e0b" />
+              <Text style={{ color: "#cbd5e1", fontSize: 13 }}>
+                {userStore.points} 积分
+              </Text>
+            </Space>
+          )}
           <Button
             theme="borderless"
             icon={

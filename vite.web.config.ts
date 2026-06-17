@@ -20,10 +20,10 @@ export default defineConfig({
     port: 5180,
     strictPort: true,
     proxy: {
-      "/api/images": {
-        target: "https://www.fhl.mom",
+      // Proxy all /api requests to backend service
+      "/api": {
+        target: "http://localhost:3001",
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api\/images/, ""),
       },
     },
   },

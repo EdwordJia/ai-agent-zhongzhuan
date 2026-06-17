@@ -18,6 +18,16 @@ temp
 _temp_*.py
 dev-web.log
 
+# Backend runtime/generated
+backend/.env
+backend/*.log
+backend/dev.err
+backend/src/generated
+backend/dist
+
+# Admin runtime/generated
+admin/dist
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

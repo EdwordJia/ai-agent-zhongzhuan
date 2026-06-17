@@ -28,8 +28,10 @@ import {
   ArrowRightLeft,
   Sparkles,
   Images,
+  Coins,
 } from "lucide-react";
 import { useProductStore } from "../../stores/productStore";
+import { useUserStore } from "../../stores/userStore";
 import { invoke } from "@tauri-apps/api/core";
 import { generateId } from "../../utils/helpers";
 import type { MaterialImage } from "../../types";
@@ -85,6 +87,7 @@ interface GeneratedImage extends ImageGenerationResult {
 export default function AIImageGenerate() {
   const products = useProductStore((s) => s.products);
   const updateProduct = useProductStore((s) => s.updateProduct);
+  const userStore = useUserStore();
 
   const [selectedProductId, setSelectedProductId] = useState<string>("");
   const [prompt, setPrompt] = useState("");
@@ -111,6 +114,13 @@ export default function AIImageGenerate() {
     [generatedImages, selectedImageIds]
   );
 
+  // Check if user can generate (has points or free quota)
+  const canGenerate = useMemo(() => {
+    if (userStore.points > 0) return true;
+    if (userStore.freeDailyUsed < userStore.freeDailyLimit) return true;
+    return false;
+  }, [userStore.points, userStore.freeDailyUsed, userStore.freeDailyLimit]);
+
   const handleGeneratePrompt = useCallback(async () => {
     if (!selectedProduct) {
       Toast.warning("请先选择一个商品");
@@ -124,6 +134,14 @@ export default function AIImageGenerate() {
   const handleGenerate = useCallback(async () => {
     if (!prompt.trim()) {
       Toast.warning("请输入生图提示词");
+      return;
+    }
+
+    // Refresh points before checking
+    await userStore.refreshPoints();
+
+    if (!canGenerate) {
+      Toast.error("积分不足或今日免费额度已用完，请使用兑换码充值");
       return;
     }
 
@@ -146,14 +164,22 @@ export default function AIImageGenerate() {
       const withIds = results.map((r) => ({ ...r, id: generateId() }));
       setGeneratedImages(withIds);
       setSelectedImageIds(new Set(withIds.map((i) => i.id)));
-      Toast.success(`成功生成 ${withIds.length} 张图片`);
+
+      // Refresh points after generation
+      await userStore.refreshPoints();
+      Toast.success(`生成成功，剩余积分 ${userStore.points}`);
     } catch (err) {
       const msg = err instanceof Error ? err.message : "图片生成失败";
-      Toast.error(msg);
+      // Check if it's a 402 payment required error
+      if (msg.includes("402") || msg.includes("余额不足") || msg.includes("points")) {
+        Toast.error("积分不足，请使用兑换码充值");
+      } else {
+        Toast.error(msg);
+      }
     } finally {
       setIsGenerating(false);
     }
-  }, [prompt, count, size, quality, outputFormat, background, selectedProduct]);
+  }, [prompt, count, size, quality, outputFormat, background, selectedProduct, canGenerate, userStore]);
 
   const toggleSelectAll = useCallback(() => {
     if (allSelected) {
@@ -463,20 +489,28 @@ export default function AIImageGenerate() {
             <Divider margin={16} />
 
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-              <Text type="tertiary" style={{ fontSize: 12 }}>
-                模型：gpt-image-2
-              </Text>
+              <Space>
+                <Coins size={14} color="#f59e0b" />
+                <Text type="tertiary" style={{ fontSize: 12 }}>
+                  剩余积分: {userStore.points} | 今日免费: {userStore.freeDailyUsed}/{userStore.freeDailyLimit}
+                </Text>
+              </Space>
               <Button
                 theme="solid"
                 type="primary"
                 icon={<Send size={16} />}
                 loading={isGenerating}
-                disabled={!prompt.trim()}
+                disabled={!prompt.trim() || !canGenerate}
                 onClick={handleGenerate}
               >
                 {isGenerating ? "生成中..." : `开始生图（${count} 张）`}
               </Button>
             </div>
+            {!canGenerate && (
+              <Text type="danger" style={{ fontSize: 12, marginTop: 8, display: "block" }}>
+                积分不足或今日免费额度已用完，请使用兑换码充值
+              </Text>
+            )}
           </Card>
         </Col>
 

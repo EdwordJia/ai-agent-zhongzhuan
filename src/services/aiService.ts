@@ -2,14 +2,6 @@ import type { Product } from "../types";
 
 export type AIGenerateType = "title" | "description" | "marketing" | "imagePrompt";
 
-export interface AIConfig {
-  provider: "openai" | "deepseek" | "ollama";
-  apiKey: string;
-  apiBase: string;
-  model: string;
-  temperature: number;
-}
-
 export interface AIResult {
   content: string;
   type: AIGenerateType;
@@ -19,28 +11,27 @@ export interface AIResult {
   createdAt: number;
 }
 
-const defaultConfig: AIConfig = {
-  provider: "openai",
-  apiKey: "sk-ChHTPhVpaJvtGIrHEVZAV4jk1hMiJVwDmwUKgqLYNVcsbbvt",
-  apiBase: "https://newapi.panda-w.com/v1",
-  model: "gpt-5.5",
-  temperature: 0.7,
-};
-
-export function getAIConfig(): AIConfig {
-  try {
-    const raw = localStorage.getItem("ai-config");
-    if (raw) {
-      return { ...defaultConfig, ...JSON.parse(raw) };
-    }
-  } catch {
-    // ignore parse error
-  }
-  return { ...defaultConfig };
+export interface AIConfig {
+  provider: "openai" | "deepseek" | "ollama";
+  apiKey: string;
+  apiBase: string;
+  model: string;
+  temperature: number;
 }
 
-export function saveAIConfig(config: AIConfig): void {
-  localStorage.setItem("ai-config", JSON.stringify(config));
+// Backward compatibility: removed localStorage config, return empty config
+export function getAIConfig(): AIConfig {
+  return {
+    provider: "openai",
+    apiKey: "",
+    apiBase: "",
+    model: "",
+    temperature: 0.7,
+  };
+}
+
+export function saveAIConfig(_config: AIConfig): void {
+  // No-op: config removed from frontend, managed by backend
 }
 
 // ==================== 模拟生成模板 ====================
@@ -167,61 +158,48 @@ function fillTemplate(template: string, product: Product, keywords: string): str
     .replace(/\{year\}/g, String(year));
 }
 
-// ==================== 模拟生成函数 ====================
-
 function randomPick<T>(arr: T[]): T {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
 export async function generateTitle(product: Product, keywords: string): Promise<string> {
-  // 模拟网络延迟
   await new Promise((r) => setTimeout(r, 800 + Math.random() * 700));
-
   const en = fillTemplate(randomPick(titleTemplates.en), product, keywords);
   const zh = fillTemplate(randomPick(titleTemplates.zh), product, keywords);
-
   return `${zh}\n\n${en}`;
 }
 
 export async function generateDescription(product: Product, keywords: string): Promise<string> {
   await new Promise((r) => setTimeout(r, 1000 + Math.random() * 1000));
-
   const zh = fillTemplate(descTemplates.zh, product, keywords);
   const en = fillTemplate(descTemplates.en, product, keywords);
-
   return `${zh}\n\n---\n\n${en}`;
 }
 
 export async function generateMarketingCopy(product: Product, keywords: string): Promise<string> {
   await new Promise((r) => setTimeout(r, 900 + Math.random() * 800));
-
   const zh = fillTemplate(randomPick(marketingTemplates.zh), product, keywords);
   const en = fillTemplate(randomPick(marketingTemplates.en), product, keywords);
-
   return `${zh}\n\n---\n\n${en}`;
 }
 
 export async function generateImagePrompt(product: Product, keywords: string): Promise<string> {
   await new Promise((r) => setTimeout(r, 600 + Math.random() * 500));
-
   return randomPick(imagePromptTemplates)
     .replace(/\{name\}/g, product.name)
     .replace(/\{keyword\}/g, keywords.split(/[,，\s]+/)[0] || keywords);
 }
 
-// ==================== 统一生成入口（预留真实 LLM 接口）====================
+// ==================== 统一生成入口（当前使用 Mock）====================
 
 export async function generateContent(
   type: AIGenerateType,
   product: Product,
-  keywords: string,
-  _config?: AIConfig
+  keywords: string
 ): Promise<string> {
-  // TODO: 当配置真实 API Key 后，可在此处调用真实 LLM
-  // const config = _config || getAIConfig();
-  // if (config.apiKey) {
-  //   return await callRealLLM(type, product, keywords, config);
-  // }
+  // TODO: 接入后端 LLM 代理服务
+  // 真实 LLM 调用应改为: POST /api/llm/generate
+  // 当前使用 mock 数据，移除前端硬编码 API key
 
   switch (type) {
     case "title":
@@ -236,18 +214,3 @@ export async function generateContent(
       throw new Error(`Unknown generate type: ${type}`);
   }
 }
-
-// ==================== 预留真实 LLM 调用接口 ====================
-
-/*
-async function callRealLLM(
-  type: AIGenerateType,
-  product: Product,
-  keywords: string,
-  config: AIConfig
-): Promise<string> {
-  // 预留：实现真实 LLM API 调用
-  // 支持 OpenAI / DeepSeek / Ollama 格式
-  throw new Error("Real LLM not implemented yet. Using mock generation.");
-}
-*/
