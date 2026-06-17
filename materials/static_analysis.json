@@ -1,0 +1,259 @@
+{
+  "pe_headers": {
+    "machine": "0x8664",
+    "timestamp": 1777214895,
+    "image_base": "0x140000000",
+    "entry_point": "0xdfa0",
+    "subsystem": 2,
+    "dll_characteristics": "0xc160"
+  },
+  "sections": [
+    {
+      "name": ".text",
+      "virtual_address": "0x1000",
+      "virtual_size": 181360,
+      "raw_size": 181760,
+      "entropy": 6.462760431765935
+    },
+    {
+      "name": ".rdata",
+      "virtual_address": "0x2e000",
+      "virtual_size": 80760,
+      "raw_size": 80896,
+      "entropy": 5.755106403686799
+    },
+    {
+      "name": ".data",
+      "virtual_address": "0x42000",
+      "virtual_size": 20656,
+      "raw_size": 3584,
+      "entropy": 1.8161003282421961
+    },
+    {
+      "name": ".pdata",
+      "virtual_address": "0x48000",
+      "virtual_size": 9252,
+      "raw_size": 9728,
+      "entropy": 5.319971076889516
+    },
+    {
+      "name": ".fptable",
+      "virtual_address": "0x4b000",
+      "virtual_size": 256,
+      "raw_size": 512,
+      "entropy": 0.0
+    },
+    {
+      "name": ".rsrc",
+      "virtual_address": "0x4c000",
+      "virtual_size": 35708,
+      "raw_size": 35840,
+      "entropy": 7.927590059679012
+    },
+    {
+      "name": ".reloc",
+      "virtual_address": "0x55000",
+      "virtual_size": 1908,
+      "raw_size": 2048,
+      "entropy": 5.264388696192065
+    }
+  ],
+  "imports": [
+    {
+      "dll": "USER32.dll",
+      "functions": [
+        "CreateWindowExW",
+        "ShutdownBlockReasonCreate",
+        "MsgWaitForMultipleObjects",
+        "ShowWindow",
+        "DestroyWindow",
+        "RegisterClassW",
+        "DefWindowProcW",
+        "PeekMessageW",
+        "DispatchMessageW",
+        "TranslateMessage",
+        "PostMessageW",
+        "GetMessageW",
+        "MessageBoxW",
+        "MessageBoxA",
+        "SystemParametersInfoW",
+        "DestroyIcon",
+        "SetWindowLongPtrW",
+        "GetWindowLongPtrW",
+        "GetClientRect",
+        "InvalidateRect",
+        "ReleaseDC",
+        "GetDC",
+        "DrawTextW",
+        "GetDialogBaseUnits",
+        "EndDialog",
+        "DialogBoxIndirectParamW",
+        "MoveWindow",
+        "SendMessageW"
+      ]
+    },
+    {
+      "dll": "COMCTL32.dll",
+      "functions": [
+        "ordinal_380"
+      ]
+    },
+    {
+      "dll": "KERNEL32.dll",
+      "functions": [
+        "GetACP",
+        "IsValidCodePage",
+        "GetStringTypeW",
+        "GetFileAttributesExW",
+        "SetEnvironmentVariableW",
+        "FlushFileBuffers",
+        "LCMapStringW",
+        "CompareStringW",
+        "VirtualProtect",
+        "InitializeCriticalSectionEx",
+        "GetOEMCP",
+        "GetCPInfo",
+        "GetLastError",
+        "FreeLibrary",
+        "GetProcAddress",
+        "LoadLibraryExW",
+        "GetModuleHandleW",
+        "MulDiv",
+        "FormatMessageW",
+        "GetModuleFileNameW",
+        "SetDllDirectoryW",
+        "GetEnvironmentStringsW",
+        "SetErrorMode",
+        "CreateDirectoryW",
+        "GetCommandLineW",
+        "GetEnvironmentVariableW",
+        "ExpandEnvironmentStringsW",
+        "DeleteFileW",
+        "FindClose",
+        "FindFirstFileW",
+        "FindNextFileW",
+        "GetDriveTypeW",
+        "RemoveDirectoryW",
+        "GetTempPathW",
+        "CloseHandle",
+        "QueryPerformanceCounter",
+        "QueryPerformanceFrequency",
+        "WaitForSingleObject",
+        "Sleep",
+        "GetCurrentProcess",
+        "TerminateProcess",
+        "GetExitCodeProcess",
+        "CreateProcessW",
+        "GetStartupInfoW",
+        "LocalFree",
+        "SetConsoleCtrlHandler",
+        "K32EnumProcessModules",
+        "K32GetModuleFileNameExW",
+        "CreateFileW",
+        "FindFirstFileExW",
+        "GetFinalPathNameByHandleW",
+        "MultiByteToWideChar",
+        "WideCharToMultiByte",
+        "FlsFree",
+        "FreeEnvironmentStringsW",
+        "GetProcessHeap",
+        "GetTimeZoneInformation",
+        "HeapSize",
+        "HeapReAlloc",
+        "WriteConsoleW",
+        "SetEndOfFile",
+        "CreateSymbolicLinkW",
+        "RtlCaptureContext",
+        "RtlLookupFunctionEntry",
+        "RtlVirtualUnwind",
+        "UnhandledExceptionFilter",
+        "SetUnhandledExceptionFilter",
+        "IsProcessorFeaturePresent",
+        "GetCurrentProcessId",
+        "GetCurrentThreadId",
+        "GetSystemTimeAsFileTime",
+        "InitializeSListHead",
+        "IsDebuggerPresent",
+        "RtlUnwindEx",
+        "SetLastError",
+        "EnterCriticalSection",
+        "LeaveCriticalSection",
+        "DeleteCriticalSection",
+        "InitializeCriticalSectionAndSpinCount",
+        "TlsAlloc",
+        "TlsGetValue",
+        "TlsSetValue",
+        "TlsFree",
+        "EncodePointer",
+        "RaiseException",
+        "RtlPcToFileHeader",
+        "GetCommandLineA",
+        "GetFileInformationByHandle",
+        "GetFileType",
+        "PeekNamedPipe",
+        "SystemTimeToTzSpecificLocalTime",
+        "FileTimeToSystemTime",
+        "ReadFile",
+        "GetFullPathNameW",
+        "SetStdHandle",
+        "GetStdHandle",
+        "WriteFile",
+        "ExitProcess",
+        "GetModuleHandleExW",
+        "HeapFree",
+        "GetConsoleMode",
+        "ReadConsoleW",
+        "SetFilePointerEx",
+        "GetConsoleOutputCP",
+        "GetFileSizeEx",
+        "HeapAlloc",
+        "GetCurrentDirectoryW",
+        "FlsAlloc",
+        "FlsGetValue",
+        "FlsSetValue"
+      ]
+    },
+    {
+      "dll": "ADVAPI32.dll",
+      "functions": [
+        "OpenProcessToken",
+        "GetTokenInformation",
+        "ConvertStringSecurityDescriptorToSecurityDescriptorW",
+        "ConvertSidToStringSidW"
+      ]
+    },
+    {
+      "dll": "GDI32.dll",
+      "functions": [
+        "SelectObject",
+        "DeleteObject",
+        "CreateFontIndirectW"
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "type_id": 3,
+      "entries": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "type_id": 14,
+      "entries": [
+        1
+      ]
+    },
+    {
+      "type_id": 24,
+      "entries": [
+        1
+      ]
+    }
+  ]
+}

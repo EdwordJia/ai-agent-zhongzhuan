@@ -1,0 +1,889 @@
+﻿ tk-
+ tkk_Q
+ vtk
+	importlib)
+	PIL._util)
+	PIL.Image)
+	Tk[R[*-
+	tKh!7
+
+nturl2path)
+
+py_compile)
+
+tkyr<:
+
+X[WtK7`
+importlib.abc)
+PIL.ImageFile)
+PIL.ImageMath)
+PIL.ImageMode)
+PIL.ImageShow)
+PIL.PdfParser)
+TKVB
+!TK3
+!tkY%D
+"?tkz
+"^tk
+"|tkp
+"TK;%
+"tK0
+"Tkt
+#*tk
+#GUi/
+#mTk
+#Tk.
+#Tkj
+#tKp
+%s\python%d.%d\lib-dynload
+&~w#Stk6
+&4TK
+&ktk
+&tk_
+(OTk
+(WTKEP
+)	tk
+)tK!
+*(tK]Yq-
+*]:tk
+*Tkl
+,'Rx.tk
+,TK~:
+,TK1t
+,tKu
+.Tka3-
+.Tkv07
+/@TK
+/[ntk
+:AlI]
+:aPI
+:gUi
+:Tk8 
+;oTk
+;tKp
+?Gtk
+?K%arCTkF5
+?tKO
+@tk.
+@TKFn
+[3'Tk
+\%Tk
+]kTkU
+]TKw
+]Vtk
+]wtK
+^!TK
+^7kuTk
+^Csv
+^dTk
+^TKD
+_\XTkT^
+__file__
+__main__
+__unaligned
+_image_data
+_L`j5tK
+_PYI_APPLICATION_HOME_DIR
+_PYI_APPLICATION_HOME_DIR environment variable is not defined!
+
+_PYI_ARCHIVE_FILE
+_pyi_main_co
+_PYI_SPLASH_IPC
+_pyinstaller_pyz
+`dynamic initializer for '
+{>tk
+|],TK
+|]tK
+|8tK6
+}HTk(M
+}TKo
+~$tk/
+~tk*"Z
++]TKs
++ietk
++tK#
+<GuI$Z
+<LTk|m
+<PTky+eZ
+<T{5tk
+>Tk
+>TkB
+>tKk
+>ZTk-
+0Rtk2
+1tK$8m
+2DIRxv
+2Tk=s8	
+2TKv
+3{TKL
+31TK
+3j&hTK3
+3stkZ
+F9P
+4TkbW
+58tk
+5DiR
+5kEy
+5ltK
+5Tk?
+5tk2D
+6bDtk
+6CtK
+6python310.dll
+8tKL
+9-TK'
+9tK"
+a7Tk
+Absolute path to script exceeds PYI_PATH_MAX
+
+ADVAPI32.dll
+AlI\
+api+
+ApIG
+ApIp
+ApP~!
+AppPolicyGetProcessTerminationMethod
+AreFileApisANSI
+Atk*!jC.
+ATKs(x
+attempted to source file outside of top-level application directory
+attempted to source file with path that exceeds maximum buffer size
+auto_path
+b_tcl_data\http1.0\http.tcl
+b_tcl_data\http1.0\pkgIndex.tcl
+b_tcl_data\tzdata\Africa\Bangui
+b_tcl_data\tzdata\Africa\Kigali
+b_tcl_data\tzdata\America\Anguilla
+b_tcl_data\tzdata\America\Atka
+b_tcl_data\tzdata\America\Halifax
+b_tcl_data\tzdata\America\Sitka
+b_tcl_data\tzdata\Asia\Kamchatka
+b_tcl_data\tzdata\Asia\Sakhalin
+b_tcl_data\tzdata\Australia\ACT
+b_tcl_data\tzdata\Australia\Adelaide
+b_tcl_data\tzdata\Australia\Brisbane
+b_tcl_data\tzdata\Australia\Broken_Hill
+b_tcl_data\tzdata\Australia\Canberra
+b_tcl_data\tzdata\Australia\Currie
+b_tcl_data\tzdata\Australia\Darwin
+b_tcl_data\tzdata\Australia\Eucla
+b_tcl_data\tzdata\Australia\Hobart
+b_tcl_data\tzdata\Australia\LHI
+b_tcl_data\tzdata\Australia\Lindeman
+b_tcl_data\tzdata\Australia\Lord_Howe
+b_tcl_data\tzdata\Australia\Melbourne
+b_tcl_data\tzdata\Australia\North
+b_tcl_data\tzdata\Australia\NSW
+b_tcl_data\tzdata\Australia\Perth
+b_tcl_data\tzdata\Australia\Queensland
+b_tcl_data\tzdata\Australia\South
+b_tcl_data\tzdata\Australia\Sydney
+b_tcl_data\tzdata\Australia\Tasmania
+b_tcl_data\tzdata\Australia\Victoria
+b_tcl_data\tzdata\Australia\West
+b_tcl_data\tzdata\Australia\Yancowinna
+b_tcl_data\tzdata\Europe\Copenhagen
+b_tcl_data\tzdata\Europe\Kaliningrad
+b_tcl_data\tzdata\Pacific\Apia
+b_tcl_data\tzdata\Turkey
+b_tk_data\bgerror.tcl
+b_tk_data\button.tcl
+b_tk_data\choosedir.tcl
+b_tk_data\clrpick.tcl
+b_tk_data\comdlg.tcl
+b_tk_data\console.tcl
+b_tk_data\dialog.tcl
+b_tk_data\entry.tcl
+b_tk_data\focus.tcl
+b_tk_data\fontchooser.tcl
+b_tk_data\iconlist.tcl
+b_tk_data\icons.tcl
+b_tk_data\images\logo.eps
+b_tk_data\images\logo100.gif
+b_tk_data\images\logo64.gif
+b_tk_data\images\logoLarge.gif
+b_tk_data\images\logoMed.gif
+b_tk_data\images\pwrdLogo.eps
+b_tk_data\images\pwrdLogo100.gif
+b_tk_data\images\pwrdLogo150.gif
+b_tk_data\images\pwrdLogo175.gif
+b_tk_data\images\pwrdLogo200.gif
+b_tk_data\images\pwrdLogo75.gif
+b_tk_data\images\README
+b_tk_data\images\tai-ku.gif
+b_tk_data\license.terms
+b_tk_data\listbox.tcl
+b_tk_data\megawidget.tcl
+b_tk_data\menu.tcl
+b_tk_data\mkpsenc.tcl
+b_tk_data\msgbox.tcl
+b_tk_data\msgs\cs.msg
+b_tk_data\msgs\da.msg
+b_tk_data\msgs\de.msg
+b_tk_data\msgs\el.msg
+b_tk_data\msgs\en.msg
+b_tk_data\msgs\en_gb.msg
+b_tk_data\msgs\eo.msg
+b_tk_data\msgs\es.msg
+b_tk_data\msgs\fr.msg
+b_tk_data\msgs\hu.msg
+b_tk_data\msgs\it.msg
+b_tk_data\msgs\nl.msg
+b_tk_data\msgs\pl.msg
+b_tk_data\msgs\pt.msg
+b_tk_data\msgs\ru.msg
+b_tk_data\msgs\sv.msg
+b_tk_data\obsolete.tcl
+b_tk_data\optMenu.tcl
+b_tk_data\palette.tcl
+b_tk_data\panedwindow.tcl
+b_tk_data\pkgIndex.tcl
+b_tk_data\safetk.tcl
+b_tk_data\scale.tcl
+b_tk_data\scrlbar.tcl
+b_tk_data\spinbox.tcl
+b_tk_data\tclIndex
+b_tk_data\tearoff.tcl
+b_tk_data\text.tcl
+b_tk_data\tk.tcl
+b_tk_data\tkfbox.tcl
+b_tk_data\ttk\altTheme.tcl
+b_tk_data\ttk\aquaTheme.tcl
+b_tk_data\ttk\button.tcl
+b_tk_data\ttk\clamTheme.tcl
+b_tk_data\ttk\classicTheme.tcl
+b_tk_data\ttk\combobox.tcl
+b_tk_data\ttk\cursors.tcl
+b_tk_data\ttk\defaults.tcl
+b_tk_data\ttk\entry.tcl
+b_tk_data\ttk\fonts.tcl
+b_tk_data\ttk\menubutton.tcl
+b_tk_data\ttk\notebook.tcl
+b_tk_data\ttk\panedwindow.tcl
+b_tk_data\ttk\progress.tcl
+b_tk_data\ttk\scale.tcl
+b_tk_data\ttk\scrollbar.tcl
+b_tk_data\ttk\sizegrip.tcl
+b_tk_data\ttk\spinbox.tcl
+b_tk_data\ttk\treeview.tcl
+b_tk_data\ttk\ttk.tcl
+b_tk_data\ttk\utils.tcl
+b_tk_data\ttk\vistaTheme.tcl
+b_tk_data\ttk\winTheme.tcl
+b_tk_data\ttk\xpTheme.tcl
+b_tk_data\unsupported.tcl
+b_tk_data\xmfbox.tcl
+b_tkinter.pyd
+B}h(TK
+B0PTk
+Bad file descriptor
+bapi-ms-win-core-console-l1-1-0.dll
+bapi-ms-win-core-datetime-l1-1-0.dll
+bapi-ms-win-core-debug-l1-1-0.dll
+bapi-ms-win-core-errorhandling-l1-1-0.dll
+bapi-ms-win-core-fibers-l1-1-0.dll
+bapi-ms-win-core-file-l1-1-0.dll
+bapi-ms-win-core-file-l1-2-0.dll
+bapi-ms-win-core-file-l2-1-0.dll
+bapi-ms-win-core-handle-l1-1-0.dll
+bapi-ms-win-core-heap-l1-1-0.dll
+bapi-ms-win-core-interlocked-l1-1-0.dll
+bapi-ms-win-core-libraryloader-l1-1-0.dll
+bapi-ms-win-core-localization-l1-2-0.dll
+bapi-ms-win-core-memory-l1-1-0.dll
+bapi-ms-win-core-namedpipe-l1-1-0.dll
+bapi-ms-win-core-processenvironment-l1-1-0.dll
+bapi-ms-win-core-processthreads-l1-1-0.dll
+bapi-ms-win-core-processthreads-l1-1-1.dll
+bapi-ms-win-core-profile-l1-1-0.dll
+bapi-ms-win-core-rtlsupport-l1-1-0.dll
+bapi-ms-win-core-string-l1-1-0.dll
+bapi-ms-win-core-synch-l1-1-0.dll
+bapi-ms-win-core-synch-l1-2-0.dll
+bapi-ms-win-core-sysinfo-l1-1-0.dll
+bapi-ms-win-core-timezone-l1-1-0.dll
+bapi-ms-win-core-util-l1-1-0.dll
+bapi-ms-win-crt-conio-l1-1-0.dll
+bapi-ms-win-crt-convert-l1-1-0.dll
+bapi-ms-win-crt-environment-l1-1-0.dll
+bapi-ms-win-crt-filesystem-l1-1-0.dll
+bapi-ms-win-crt-heap-l1-1-0.dll
+bapi-ms-win-crt-locale-l1-1-0.dll
+bapi-ms-win-crt-math-l1-1-0.dll
+bapi-ms-win-crt-process-l1-1-0.dll
+bapi-ms-win-crt-runtime-l1-1-0.dll
+bapi-ms-win-crt-stdio-l1-1-0.dll
+bapi-ms-win-crt-string-l1-1-0.dll
+bapi-ms-win-crt-time-l1-1-0.dll
+bapi-ms-win-crt-utility-l1-1-0.dll
+BEtk
+bPIL\_avif.cp310-win_amd64.pyd
+bPIL\_imaging.cp310-win_amd64.pyd
+bPIL\_imagingcms.cp310-win_amd64.pyd
+bPIL\_imagingmath.cp310-win_amd64.pyd
+bPIL\_imagingtk.cp310-win_amd64.pyd
+bPIL\_webp.cp310-win_amd64.pyd
+bpython310.dll
+btcl8\8.6\http-2.9.5.tm
+btk
+#'d.q
+bTK?
+btk86t.dll
+BZtK
+C	tK
+c?tK
+c{tkS
+C+Tk
+configure_c_stdio
+Could not allocate memory for DYLIB_PYTHON structure.
+
+Could not allocate memory for DYLIB_TCLTK structure.
+
+Could not allocate memory for splash screen resources.
+
+Could not allocate memory for SPLASH_CONTEXT.
+
+Could not create temporary directory!
+
+Could not get __main__ module.
+
+Could not get __main__ module's dict.
+
+Could not load PyInstaller's embedded PKG archive from the executable (%s)
+
+Could not side-load PyInstaller's PKG archive from external file (%s)
+
+CreateDirectoryW
+CreateFileW
+CreateFontIndirectW
+CreateWindowExW
+cSTk9
+csv)
+CSvD
+CSVL
+csvV(
+ctkM
+cTKx
+CutK
+cX(TK(n
+D\tkh
+DefWindowProcW
+DeleteFileW
+DestroyWindow
+DialogBoxIndirectParamW
+DIr1B
+Directory not empty
+DLtK4D
+DmTKx
+Domain error
+DPtk`2
+DTK,>
+dtKi
+DTkshM
+e*TK
+-E/bTk
+e/Tk
+EndDialog
+Error on file.
+
+EtKdv
+EWtkv
+Extraction path length exceeds maximum path length!
+
+Failed to allocate PyConfig structure! Unsupported python version?
+
+Failed to allocate PyInitConfig structure!
+
+Failed to construct path to base_library.zip - path is too long!
+
+Failed to construct path to lib-dynload directory - path is too long!
+
+Failed to convert DLL search path!
+
+Failed to copy file %s from %s!
+
+Failed to copy path to application home directory - path is too long!
+
+Failed to create parent directory structure.
+
+Failed to extract %s: failed to open archive file!
+
+Failed to extract %s: failed to open target file!
+
+Failed to extract %s: failed to seek to the entry's data!
+
+Failed to extract entry: %s.
+
+Failed to format PYZ archive path and offset
+
+Failed to initialize security descriptor for temporary directory!
+
+Failed to load splash screen resources!
+
+Failed to load Tcl/Tk shared libraries for splash screen!
+
+Failed to open archive %s!
+
+Failed to open referenced dependency archive %s.
+
+Failed to pre-initialize embedded python interpreter!
+
+Failed to remove temporary directory: %s
+
+Failed to set application home directory via environment variable!
+
+Failed to set 'configure_c_stdio': %s
+
+Failed to set module search paths!
+
+Failed to set module search paths: %s
+
+Failed to set python home path!
+
+Failed to set python home path: %s
+
+Failed to set 'site_import': %s
+
+Failed to start embedded python interpreter!
+
+Failed to start embedded python interpreter: %s
+
+Failed to start splash screen!
+
+Failed to store path to PYZ archive into sys.%s!
+
+Failed to unpack splash screen dependencies from PKG archive!
+
+File already exists but should not: %s
+
+file error
+File exists
+File too large
+Filename too long
+FileTimeToSystemTime
+FindFirstFileExW
+FindFirstFileW
+FindNextFileW
+FlushFileBuffers
+fopen
+FtK`
+FtKce
+fTkd_l
+g{tk
+GetCurrentDirectoryW
+GetDialogBaseUnits
+GetFileAttributesExW
+GetFileInformationByHandle
+GetFileSizeEx
+GetFileType
+GetFinalPathNameByHandleW
+GetFullPathNameW
+GetModuleFileNameW
+GetSystemTimeAsFileTime
+GetTempPathW
+GetTokenInformation
+GetWindowLongPtrW
+Gj!tK
+GTK2
+Gui2
+gY4|HTK'E8
+H|;tk
+HtK(S
+http)
+http.client)
+http.cookiejar)
+I0tKyK
+ifTK
+importlib._abc)
+importlib._bootstrap)
+importlib._bootstrap_external)
+importlib.machinery)
+importlib.metadata)
+importlib.metadata._adapters)
+importlib.metadata._collections)
+importlib.metadata._functools)
+importlib.metadata._itertools)
+importlib.metadata._meta)
+importlib.metadata._text)
+importlib.readers)
+importlib.util)
+Inappropriate I/O control operation
+InitializeCriticalSectionAndSpinCount
+InitializeCriticalSectionEx
+InitializeSListHead
+Invalid argument
+invalid bit length repeat
+invalid block type
+invalid code -- missing end-of-block
+invalid code lengths set
+invalid distance code
+invalid distance too far back
+invalid distances set
+invalid literal/length code
+invalid literal/lengths set
+Invalid parent process level: %d
+
+Invalid seek
+invalid stored block lengths
+Invalid value in _PYI_PARENT_PROCESS_LEVEL: %s
+
+invalid window size
+InvalidateRect
+Is a directory
+IsValidCodePage
+ItkP
+J%TK
+jD	~tK"
+jLTKTz
+jR% IY'TK
+json)
+json.decoder)
+json.encoder)
+json.scanner)
+JsTK
+jTkQ
+JTKU
+JtKwj
+K32GetModuleFileNameExW
+kEygR
+kEyM
+keYT:
+KtK2
+ktKr
+kTKu
+l**uDG[tk{
+l,;Mtkw
+lFALi
+ltkF
+m|tk
+mA	TKR
+module_search_paths
+MoveWindow
+mpyimod02_importers
+mTK'
+MTk I
+NDIr!2(
+NEGUi
+NlaKtK"
+nmi\Tk
+No such file or directory
+Not a directory
+NtK7
+ntKk#L
+NTKw
+O@Tkqz
+OC{tK
+OpenProcessToken
+opyi-contents-directory _internal
+PA<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+  <trustInfo xmlns="urn:schemas-microsoft-com:asm.v3">
+    <security>
+      <requestedPrivileges>
+        <requestedExecutionLevel level="asInvoker" uiAccess="false"/>
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+    <application>
+      <supportedOS Id="{e2011457-1546-43c5-a5fe-008deee3d3f0}"/>
+      <supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}"/>
+      <supportedOS Id="{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}"/>
+      <supportedOS Id="{1f676c76-80e1-4239-95bb-83d0f6d0da78}"/>
+      <supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}"/>
+    </application>
+  </compatibility>
+  <application xmlns="urn:schemas-microsoft-com:asm.v3">
+    <windowsSettings>
+      <longPathAware xmlns="http://schemas.microsoft.com/SMI/2016/WindowsSettings">true</longPathAware>
+    </windowsSettings>
+  </application>
+  <dependency>
+    <dependentAssembly>
+      <assemblyIdentity type="win32" name="Microsoft.Windows.Common-Controls" version="6.0.0.0" processorArchitecture="*" publicKeyToken="6595b64144ccf1df" language="*"/>
+    </dependentAssembly>
+  </dependency>
+</assembly>PADPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADD
+Path exceeds PYI_PATH_MAX limit.
+
+pathlib)
+pbTk
+PIL)
+PIL._binary)
+PIL._deprecate)
+PIL._tkinter_finder)
+PIL._typing)
+PIL._version)
+PIL.AvifImagePlugin)
+PIL.BlpImagePlugin)
+PIL.BmpImagePlugin)
+PIL.BufrStubImagePlugin)
+PIL.CurImagePlugin)
+PIL.DcxImagePlugin)
+PIL.DdsImagePlugin)
+PIL.EpsImagePlugin)
+PIL.ExifTags)
+PIL.features)
+PIL.FitsImagePlugin)
+PIL.FliImagePlugin)
+PIL.FpxImagePlugin)
+PIL.FtexImagePlugin)
+PIL.GbrImagePlugin)
+PIL.GifImagePlugin)
+PIL.GimpGradientFile)
+PIL.GimpPaletteFile)
+PIL.GribStubImagePlugin)
+PIL.Hdf5StubImagePlugin)
+PIL.IcnsImagePlugin)
+PIL.IcoImagePlugin)
+PIL.ImageChops)
+PIL.ImageCms)
+PIL.ImageColor)
+PIL.ImageFilter)
+PIL.ImageOps)
+PIL.ImagePalette)
+PIL.ImageQt)
+PIL.ImageSequence)
+PIL.ImageTk)
+PIL.ImageWin)
+PIL.ImImagePlugin)
+PIL.ImtImagePlugin)
+PIL.IptcImagePlugin)
+PIL.Jpeg2KImagePlugin)
+PIL.JpegImagePlugin)
+PIL.JpegPresets)
+PIL.McIdasImagePlugin)
+PIL.MicImagePlugin)
+PIL.MpegImagePlugin)
+PIL.MpoImagePlugin)
+PIL.MspImagePlugin)
+PIL.PaletteFile)
+PIL.PalmImagePlugin)
+PIL.PcdImagePlugin)
+PIL.PcxImagePlugin)
+PIL.PdfImagePlugin)
+PIL.PixarImagePlugin)
+PIL.PngImagePlugin)
+PIL.PpmImagePlugin)
+PIL.PsdImagePlugin)
+PIL.QoiImagePlugin)
+PIL.SgiImagePlugin)
+PIL.SpiderImagePlugin)
+PIL.SunImagePlugin)
+PIL.TgaImagePlugin)
+PIL.TiffImagePlugin)
+PIL.TiffTags)
+PIL.WebPImagePlugin)
+PIL.WmfImagePlugin)
+PIL.XbmImagePlugin)
+PIL.XpmImagePlugin)
+PIL.XVThumbImagePlugin)
+PiLaiYfKX
+pkEy.[
+pPtK
+PStK0R
+PtBtFtEtK4
+Py_Finalize
+Py_InitializeFromConfig
+Py_InitializeFromInitConfig
+Py_IsInitialized
+Py_PreInitialize
+PyConfig_Clear
+PyConfig_InitIsolatedConfig
+PyConfig_Read
+PyConfig_SetBytesString
+PyConfig_SetString
+PyConfig_SetWideStringList
+PyErr_NormalizeException
+pyi-contents-directory
+pyi-disable-windowed-traceback
+PyImport_AddModule
+PyImport_ExecCodeModule
+PyImport_ImportModule
+PyInitConfig_Create
+PyInitConfig_Free
+PyInitConfig_GetError
+PyInitConfig_SetInt
+PyInitConfig_SetStr
+PyInitConfig_SetStrList
+PYINSTALLER_RESET_ENVIRONMENT
+PYINSTALLER_STRICT_UNPACK_MODE
+PYINSTALLER_SUPPRESS_SPLASH_SCREEN
+pyi-python-flag
+pyi-runtime-tmpdir
+PyList_Append
+PyPreConfig_InitIsolatedConfig
+PYZ archive entry not found in the TOC!
+
+PzTkl
+qctk
+QTk$
+QtKQ1
+r^otK 
+RCtk
+ReadFile
+Read-only file system
+reDTk
+RemoveDirectoryW
+RlRTK
+rTK=
+RtlLookupFunctionEntry
+RtlPcToFileHeader
+SetDllDirectoryW
+SetEndOfFile
+SetFilePointerEx
+SetWindowLongPtrW
+ShowWindow
+site_import
+SPLASH: could not extract requirement %s.
+
+SPLASH: could not find requirement %s in archive.
+
+SPLASH: extraction path length exceeds maximum path length!
+
+SPLASH: failed to create parent directory structure.
+
+SPLASH: failed to load Tcl/Tk shared libraries!
+
+SPLASH: file already exists but should not: %s
+
+SPLASH: length of Tcl module directory path exceeds maximum path length!
+
+SPLASH: length of Tcl shared library path exceeds maximum path length!
+
+SPLASH: length of Tk module directory path exceeds maximum path length!
+
+SPLASH: length of Tk shared library path exceeds maximum path length!
+
+SPLASH: Tcl is not threaded. Only threaded Tcl is supported.
+
+spyi_rth__tkinter
+SSTk
+tarfile)
+Tcl_ConditionFinalize
+Tcl_EvalFile
+Tcl_Finalize
+Tcl_FinalizeThread
+Tcl_MutexFinalize
+tcl_pkgPath
+tempfile)
+text file busy
+TK#|
+tk$\
+TK&%
+TK&>
+tk&k
+Tk)9.
+Tk)n
+tk)Sh
+tk*4
+tk*H
+tk.L(
+tk.tcl
+tk/P
+tK@8
+TK@k
+Tk[{
+tk].\
+TK^e
+TK_)U
+Tk_c3
+Tk_GetNumMainWindows
+Tk_Init
+tk_library
+tk_patchLevel
+Tk`aE
+TK`j
+Tk{!4
+Tk|S
+Tk<.
+TK=@.
+tK=5
+TK4y
+tk7cI
+TK9J
+TK9z&
+Tk'an
+TkB"
+'tkd
+tKd.
+TkE
+Y
+TKE|
+tKf7
+Tkfp
+TKG4
+tKGb?
+TKGKw
+TkhA8
+tKhh
+tkI^
+tkinter)
+tkinter.commondialog)
+tkinter.constants)
+tkinter.dialog)
+tkinter.filedialog)
+tkinter.messagebox)
+tkinter.simpledialog)
+tkinter.ttk)
+Tkj4
+tKmI
+TkMV
+TKn;
+TKOe
+TkOk
+TkOO%|
+TKPtLP
+tkr	
+tkS(
+TkS4w{
+Tks8
+tkT'
+tkt+u
+TKTF
+tKTG
+tkTI
+Tkw9
+tKX%0R
+tkX>
+tkxxjzRx
+tKY#<
+tKZ{
+token)
+tokenize)
+Too many open files
+Too many open files in system
+TtKD
+uTK
+u),rtke
+Up0Ali+
+urllib.request)
+USER32.dll
+utKm
+uTKo
+V?TKE<8
+v{tK
+VcSV
+VhUkTk/
+vkey
+W%tk
+wapP
+WriteFile
+WtK5
+WTkf
+WtKH{
+wTTK
+XKtk
+xml.etree.ElementPath)
+xPIl,QF6
+XPtk
+xtkD5
+xTkR
+y:tKK[
+YltK
+yu[tK
+z?v}GtK
+zD,Tk8
+zGP'tk
+zipfile)
+ztKz

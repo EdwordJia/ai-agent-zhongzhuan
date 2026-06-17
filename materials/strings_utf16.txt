@@ -1,0 +1,99 @@
+Failed to convert root directory path to wide-char string.
+%ls\ucrtbase.dll
+Path of ucrtbase.dll (%ls) and its name exceed buffer size (%d).
+Path of Python DLL (%ls) and its name (%hs) exceed buffer size (%d).
+Failed to load Python DLL '%ls'.
+LoadLibrary
+Failed to import symbol %hs from Python DLL.
+GetProcAddress
+Failed to convert path to Tcl DLL to wide-char string.
+Failed to load Tcl DLL '%ls'.
+Failed to convert path to Tk DLL to wide-char string
+Failed to load Tk DLL '%ls'.
+Failed to import symbol %hs from Tcl DLL.
+tFailed to import symbol %hs from Tk DLL.
+Failed to execute script '%ls' due to unhandled exception: %ls
+Unhandled exception in script
+Failed to obtain/convert traceback!
+[PYI-%d:%ls] 
+[PYI-%d:ERROR] 
+<FormatMessageW failed.>
+]Warning
+VCRUNTIME140.dll
+VCRUNTIME140_1.dll
+Failed to obtain executable path.
+GetModuleFileNameW
+Failed to resolve full path to executable %ls.
+Failed to convert executable path to UTF-8.
+LOADER: failed to convert runtime-tmpdir to a wide string.
+LOADER: failed to expand environment variables in the runtime-tmpdir.
+LOADER: runtime-tmpdir points to non-existent drive %ls (type: %d)!
+LOADER: failed to obtain the absolute path of the runtime-tmpdir.
+LOADER: failed to create runtime-tmpdir path %ls!
+CreateDirectory
+LOADER: failed to set the TMP environment variable.
+LOADER: length of teporary directory path exceeds maximum path length!
+Needs to remove its temporary files.
+Failed to create child process!
+CreateProcessW
+PyInstallerOnefileHiddenWindow
+PyInstaller Onefile Hidden Window
+D:(A;;FA;;;%s)(A;;FA;;;%s)
+D:(A;;FA;;;%s)
+Security descriptor string length exceeds PYI_PATH_MAX!
+#+3;CScs
+api-ms-win-core-fibers-l1-1-1
+api-ms-win-core-synch-l1-2-0
+kernel32
+mscoree.dll
+Wednesday
+Thursday
+Saturday
+February
+September
+November
+December
+MM/dd/yy
+dddd, MMMM dd, yyyy
+HH:mm:ss
+api-ms-win-core-datetime-l1-1-1
+api-ms-win-core-fibers-l1-1-2
+api-ms-win-core-file-l1-2-4
+api-ms-win-core-file-l1-2-2
+api-ms-win-core-file-l2-1-4
+api-ms-win-core-localization-l1-2-1
+api-ms-win-core-localization-obsolete-l1-2-0
+api-ms-win-core-processthreads-l1-1-2
+api-ms-win-core-string-l1-1-0
+api-ms-win-core-sysinfo-l1-2-1
+api-ms-win-core-winrt-l1-1-0
+api-ms-win-core-xstate-l2-1-0
+api-ms-win-rtcore-ntuser-window-l1-1-0
+api-ms-win-security-systemfunctions-l1-1-0
+ext-ms-win-ntuser-dialogbox-l1-1-0
+ext-ms-win-ntuser-windowstation-l1-1-0
+advapi32
+kernelbase
+api-ms-win-appmodel-runtime-l1-1-2
+         (((((                  H
+         (((((                  H
+      (                          
+UTF-16LEUNICODE
+az-AZ-Latn
+uz-UZ-Latn
+sr-SP-Latn
+az-AZ-Cyrl
+uz-UZ-Cyrl
+sr-SP-Cyrl
+bs-BA-Latn
+sr-BA-Latn
+sr-BA-Cyrl
+az-az-cyrl
+az-az-latn
+bs-ba-latn
+sr-ba-cyrl
+sr-ba-latn
+sr-sp-cyrl
+sr-sp-latn
+uz-uz-cyrl
+uz-uz-latn
