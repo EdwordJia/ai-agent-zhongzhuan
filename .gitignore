@@ -20,6 +20,7 @@ dev-web.log
 
 # Backend runtime/generated
 backend/.env
+backend/.env.test
 backend/*.log
 backend/dev.err
 backend/src/generated

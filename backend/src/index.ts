@@ -1,36 +1,10 @@
 import 'dotenv/config';
-import express from 'express';
-import cors from 'cors';
 import mysql from 'mysql2/promise';
 import { execSync } from 'child_process';
 import { prisma } from './prisma/client';
-import authRoutes from './routes/auth';
-import adminRoutes from './routes/admin';
-import clientRoutes from './routes/client';
-import imageRoutes from './routes/images';
+import { app } from './app';
 
-const app = express();
 const PORT = 3001;
-
-app.use(cors({
-  origin: ['http://localhost:5174', 'http://localhost:5180'],
-  credentials: true
-}));
-app.use(express.json({ limit: '10mb' }));
-
-app.use('/api/auth', authRoutes);
-app.use('/api/admin', adminRoutes);
-app.use('/api/user', clientRoutes);
-app.use('/api/images', imageRoutes);
-
-app.get('/health', (_req, res) => {
-  res.json({ success: true, message: 'ok' });
-});
-
-app.use((err: any, _req: any, res: any, _next: any) => {
-  console.error(err);
-  res.status(500).json({ success: false, message: err.message || '服务器内部错误' });
-});
 
 async function ensureDatabase() {
   const dbUrl = process.env.DATABASE_URL || '';
@@ -50,7 +24,7 @@ async function ensureDatabase() {
 
 async function checkTableExists(tableName: string): Promise<boolean> {
   try {
-    const result = await prisma.$queryRawUnsafe(`SELECT 1 FROM \`${tableName}\` LIMIT 1`) as any[];
+    await prisma.$queryRawUnsafe(`SELECT 1 FROM \`${tableName}\` LIMIT 1`) as any[];
     return true;
   } catch {
     return false;
@@ -97,4 +71,8 @@ async function start() {
   }
 }
 
-start();
+if (require.main === module) {
+  start();
+}
+
+export { app, start };
