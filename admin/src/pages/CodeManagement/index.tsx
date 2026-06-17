@@ -181,7 +181,9 @@ const CodeManagement: React.FC = () => {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
+          width: '100%',
           marginBottom: 8,
+          boxSizing: 'border-box',
         }}
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>

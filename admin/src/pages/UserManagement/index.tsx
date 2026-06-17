@@ -9,7 +9,7 @@ interface User {
   id: number;
   machine_id: string;
   points: number;
-  total_consumed: number;
+  total_used: number;
   created_at: string;
 }
 
@@ -99,7 +99,7 @@ const UserManagement: React.FC = () => {
     },
     {
       title: '总消耗',
-      dataIndex: 'total_consumed',
+      dataIndex: 'total_used',
       width: 120,
       render: (val: number | null) => (
         <Tag color="red" size="small">
@@ -154,7 +154,9 @@ const UserManagement: React.FC = () => {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
+          width: '100%',
           marginBottom: 8,
+          boxSizing: 'border-box',
         }}
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>

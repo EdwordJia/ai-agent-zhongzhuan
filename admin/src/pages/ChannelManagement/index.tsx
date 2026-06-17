@@ -9,14 +9,14 @@ const { Option } = Select;
 interface Channel {
   id: number;
   name: string;
-  type: string;
-  gateway: string;
-  api_key: string;
+  type: 'paid' | 'free';
+  gateway_url: string;
+  api_key: string | null;
   model: string;
   cost_per_image: number;
   priority: number;
   daily_free_limit: number;
-  status: 'active' | 'inactive';
+  is_active: boolean;
   created_at: string;
 }
 
@@ -28,14 +28,14 @@ const ChannelManagement: React.FC = () => {
   const [editingChannel, setEditingChannel] = useState<Channel | null>(null);
   const [formData, setFormData] = useState({
     name: '',
-    type: 'openai',
-    gateway: '',
+    type: 'paid' as 'paid' | 'free',
+    gateway_url: '',
     api_key: '',
     model: '',
     cost_per_image: 0,
     priority: 1,
     daily_free_limit: 0,
-    status: 'active',
+    is_active: true,
   });
 
   const fetchChannels = async () => {
@@ -58,14 +58,14 @@ const ChannelManagement: React.FC = () => {
   const resetForm = () => {
     setFormData({
       name: '',
-      type: 'openai',
-      gateway: '',
+      type: 'paid',
+      gateway_url: '',
       api_key: '',
       model: '',
       cost_per_image: 0,
       priority: 1,
       daily_free_limit: 0,
-      status: 'active',
+      is_active: true,
     });
     setEditingChannel(null);
   };
@@ -80,13 +80,13 @@ const ChannelManagement: React.FC = () => {
     setFormData({
       name: channel.name,
       type: channel.type,
-      gateway: channel.gateway,
-      api_key: channel.api_key,
+      gateway_url: channel.gateway_url,
+      api_key: channel.api_key || '',
       model: channel.model,
       cost_per_image: channel.cost_per_image / 100,
       priority: channel.priority,
       daily_free_limit: channel.daily_free_limit,
-      status: channel.status,
+      is_active: channel.is_active,
     });
     setModalVisible(true);
   };
@@ -94,10 +94,20 @@ const ChannelManagement: React.FC = () => {
   const handleSubmit = async () => {
     setModalLoading(true);
     try {
-      const payload = {
-        ...formData,
+      const payload: any = {
+        name: formData.name,
+        type: formData.type,
+        gateway_url: formData.gateway_url,
+        model: formData.model,
         cost_per_image: Math.round(formData.cost_per_image * 100),
+        priority: formData.priority,
+        daily_free_limit: formData.daily_free_limit,
+        is_active: formData.is_active,
       };
+      // 编辑时如果 API Key 未修改（仍是脱敏值），则不提交，避免把 **** 存入库
+      if (!editingChannel || !formData.api_key.includes('****')) {
+        payload.api_key = formData.api_key;
+      }
       if (editingChannel) {
         await api.put(`/admin/channels/${editingChannel.id}`, payload);
         Toast.success('渠道更新成功');
@@ -138,10 +148,8 @@ const ChannelManagement: React.FC = () => {
 
   const getTypeTag = (type: string) => {
     const typeMap: Record<string, { color: string; label: string }> = {
-      openai: { color: 'blue', label: 'OpenAI' },
-      stability: { color: 'purple', label: 'Stability' },
-      midjourney: { color: 'orange', label: 'Midjourney' },
-      custom: { color: 'grey', label: '自定义' },
+      paid: { color: 'orange', label: '付费' },
+      free: { color: 'green', label: '免费' },
     };
     const config = typeMap[type] || { color: 'grey', label: type };
     return <Tag color={config.color} size="small">{config.label}</Tag>;
@@ -208,11 +216,11 @@ const ChannelManagement: React.FC = () => {
     },
     {
       title: '状态',
-      dataIndex: 'status',
+      dataIndex: 'is_active',
       width: 90,
-      render: (status: string) => (
-        <Tag color={status === 'active' ? 'green' : 'red'} size="small">
-          {status === 'active' ? '启用' : '禁用'}
+      render: (is_active: boolean) => (
+        <Tag color={is_active ? 'green' : 'red'} size="small">
+          {is_active ? '启用' : '禁用'}
         </Tag>
       ),
     },
@@ -253,7 +261,9 @@ const ChannelManagement: React.FC = () => {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
+          width: '100%',
           marginBottom: 8,
+          boxSizing: 'border-box',
         }}
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
@@ -353,23 +363,21 @@ const ChannelManagement: React.FC = () => {
             field="type"
             label="类型"
             value={formData.type}
-            onChange={(v: string) => setFormData({ ...formData, type: v })}
+            onChange={(v: 'paid' | 'free') => setFormData({ ...formData, type: v })}
             style={{
               backgroundColor: 'rgba(15, 23, 42, 0.6)',
               borderColor: 'var(--border-color-strong)',
               borderRadius: 8,
             }}
           >
-            <Option value="openai">OpenAI</Option>
-            <Option value="stability">Stability AI</Option>
-            <Option value="midjourney">Midjourney</Option>
-            <Option value="custom">自定义</Option>
+            <Option value="paid">付费</Option>
+            <Option value="free">免费</Option>
           </Form.Select>
           <Form.Input
-            field="gateway"
+            field="gateway_url"
             label="网关地址"
-            value={formData.gateway}
-            onChange={(v: string) => setFormData({ ...formData, gateway: v })}
+            value={formData.gateway_url}
+            onChange={(v: string) => setFormData({ ...formData, gateway_url: v })}
             style={{
               backgroundColor: 'rgba(15, 23, 42, 0.6)',
               borderColor: 'var(--border-color-strong)',
@@ -435,18 +443,18 @@ const ChannelManagement: React.FC = () => {
             }}
           />
           <Form.Select
-            field="status"
+            field="is_active"
             label="状态"
-            value={formData.status}
-            onChange={(v: string) => setFormData({ ...formData, status: v })}
+            value={formData.is_active ? 'true' : 'false'}
+            onChange={(v: string) => setFormData({ ...formData, is_active: v === 'true' })}
             style={{
               backgroundColor: 'rgba(15, 23, 42, 0.6)',
               borderColor: 'var(--border-color-strong)',
               borderRadius: 8,
             }}
           >
-            <Option value="active">启用</Option>
-            <Option value="inactive">禁用</Option>
+            <Option value="true">启用</Option>
+            <Option value="false">禁用</Option>
           </Form.Select>
         </Form>
       </Modal>

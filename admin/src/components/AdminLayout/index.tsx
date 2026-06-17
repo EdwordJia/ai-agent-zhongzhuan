@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Layout, Nav, Button, Avatar, Typography, Space, Dropdown, Badge, Input } from '@douyinfe/semi-ui';
+import { Layout, Nav, Button, Typography, Space, Dropdown, Badge, Input } from '@douyinfe/semi-ui';
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import {
   LayoutDashboard,
@@ -270,17 +270,27 @@ const AdminLayout: React.FC = () => {
                   borderRadius: 24,
                   border: '1px solid var(--border-color)',
                   backgroundColor: 'rgba(15, 23, 42, 0.6)',
+                  height: 40,
+                  boxSizing: 'border-box',
                 }}
               >
-                <Avatar
-                  size="small"
+                <div
                   style={{
+                    width: 28,
+                    height: 28,
+                    borderRadius: '50%',
                     background: 'var(--gradient-blue)',
                     border: '2px solid rgba(59, 130, 246, 0.3)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0,
+                    overflow: 'hidden',
+                    boxSizing: 'border-box',
                   }}
                 >
                   <User size={14} />
-                </Avatar>
+                </div>
                 <Text style={{ color: 'var(--text-primary)', fontWeight: 500 }}>
                   {admin?.username || '管理员'}
                 </Text>
