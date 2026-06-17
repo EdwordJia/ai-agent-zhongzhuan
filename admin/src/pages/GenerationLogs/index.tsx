@@ -9,13 +9,13 @@ const { Option } = Select;
 interface GenerationLog {
   id: number;
   user_id: number;
-  machine_id: string;
+  user?: { machine_id: string } | null;
   channel_id: number;
-  channel_name: string;
+  channel?: { name: string } | null;
   prompt: string;
-  quantity: number;
-  points_consumed: number;
-  status: 'success' | 'failed' | 'pending';
+  n: number;
+  points_cost: number | null;
+  status: 'success' | 'fail' | 'pending';
   created_at: string;
 }
 
@@ -85,20 +85,23 @@ const GenerationLogs: React.FC = () => {
     },
     {
       title: '用户',
-      dataIndex: 'machine_id',
+      dataIndex: 'user',
       width: 140,
-      render: (val: string) => (
-        <Text style={{ color: 'var(--text-primary)', fontFamily: 'monospace', fontSize: 13 }}>
-          {val?.slice(0, 12)}...
-        </Text>
-      ),
+      render: (_: any, record: GenerationLog) => {
+        const machineId = record.user?.machine_id || '';
+        return (
+          <Text style={{ color: 'var(--text-primary)', fontFamily: 'monospace', fontSize: 13 }}>
+            {machineId ? `${machineId.slice(0, 12)}...` : '-'}
+          </Text>
+        );
+      },
     },
     {
       title: '渠道',
-      dataIndex: 'channel_name',
+      dataIndex: 'channel',
       width: 120,
-      render: (val: string) => (
-        <Tag color="blue" size="small">{val}</Tag>
+      render: (_: any, record: GenerationLog) => (
+        <Tag color="blue" size="small">{record.channel?.name || '-'}</Tag>
       ),
     },
     {
@@ -112,7 +115,7 @@ const GenerationLogs: React.FC = () => {
     },
     {
       title: '数量',
-      dataIndex: 'quantity',
+      dataIndex: 'n',
       width: 80,
       render: (val: number) => (
         <Text style={{ color: 'var(--text-secondary)' }}>{val}</Text>
@@ -120,13 +123,16 @@ const GenerationLogs: React.FC = () => {
     },
     {
       title: '消耗积分',
-      dataIndex: 'points_consumed',
+      dataIndex: 'points_cost',
       width: 120,
-      render: (val: number) => (
-        <Tag color="red" size="small">
-          {(val / 100).toFixed(2)}
-        </Tag>
-      ),
+      render: (val: number | null) => {
+        const cost = typeof val === 'number' ? val : 0;
+        return (
+          <Tag color="red" size="small">
+            {(cost / 100).toFixed(2)}
+          </Tag>
+        );
+      },
     },
     {
       title: '状态',
@@ -135,11 +141,13 @@ const GenerationLogs: React.FC = () => {
       render: (status: string) => {
         const colorMap: Record<string, string> = {
           success: 'green',
+          fail: 'red',
           failed: 'red',
           pending: 'orange',
         };
         const labelMap: Record<string, string> = {
           success: '成功',
+          fail: '失败',
           failed: '失败',
           pending: '处理中',
         };
@@ -227,7 +235,7 @@ const GenerationLogs: React.FC = () => {
           >
             <Option value="">全部状态</Option>
             <Option value="success">成功</Option>
-            <Option value="failed">失败</Option>
+            <Option value="fail">失败</Option>
             <Option value="pending">处理中</Option>
           </Select>
           <DatePicker

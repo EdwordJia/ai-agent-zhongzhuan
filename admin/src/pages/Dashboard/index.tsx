@@ -16,21 +16,23 @@ const { Text, Title } = Typography;
 
 interface DashboardStats {
   totalUsers: number;
-  totalPointsIssued: number;
+  totalIssued: number;
   todayGenerations: number;
   totalPointsConsumed: number;
+  totalPoints?: number;
+  totalUsed?: number;
 }
 
 interface GenerationLog {
   id: number;
   user_id: number;
-  machine_id: string;
+  user?: { machine_id: string } | null;
   channel_id: number;
-  channel_name: string;
+  channel?: { name: string } | null;
   prompt: string;
-  quantity: number;
-  points_consumed: number;
-  status: 'success' | 'failed' | 'pending';
+  n: number;
+  points_cost: number | null;
+  status: 'success' | 'fail' | 'pending';
   created_at: string;
 }
 
@@ -52,7 +54,7 @@ const statCards = [
     iconColor: '#60a5fa',
   },
   {
-    key: 'totalPointsIssued',
+    key: 'totalIssued',
     title: '总积分发放',
     subtitle: '累计发放积分',
     icon: Coins,
@@ -70,7 +72,7 @@ const statCards = [
     iconColor: '#fbbf24',
   },
   {
-    key: 'totalPointsConsumed',
+    key: 'totalUsed',
     title: '总积分消耗',
     subtitle: '累计消耗积分',
     icon: TrendingDown,
@@ -205,9 +207,10 @@ const Dashboard: React.FC = () => {
         {statCards.map((card) => {
           const Icon = card.icon;
           const value = stats?.[card.key as keyof DashboardStats] ?? 0;
-          const displayValue = card.key.includes('Points')
-            ? (value / 100).toFixed(2)
-            : value.toLocaleString();
+          const displayValue =
+            card.key.includes('Points') || card.key.includes('Issued') || card.key.includes('Used')
+              ? (value / 100).toFixed(2)
+              : value.toLocaleString();
 
           return (
             <div
@@ -320,27 +323,30 @@ const Dashboard: React.FC = () => {
                 },
                 {
                   title: '用户',
-                  dataIndex: 'machine_id',
+                  dataIndex: 'user',
                   width: 120,
-                  render: (val: string) => (
-                    <Text
-                      style={{
-                        color: 'var(--text-primary)',
-                        fontFamily: 'monospace',
-                        fontSize: 13,
-                      }}
-                    >
-                      {val?.slice(0, 12)}...
-                    </Text>
-                  ),
+                  render: (_: any, record: GenerationLog) => {
+                    const machineId = record.user?.machine_id || '';
+                    return (
+                      <Text
+                        style={{
+                          color: 'var(--text-primary)',
+                          fontFamily: 'monospace',
+                          fontSize: 13,
+                        }}
+                      >
+                        {machineId ? `${machineId.slice(0, 12)}...` : '-'}
+                      </Text>
+                    );
+                  },
                 },
                 {
                   title: '渠道',
-                  dataIndex: 'channel_name',
+                  dataIndex: 'channel',
                   width: 100,
-                  render: (val: string) => (
+                  render: (_: any, record: GenerationLog) => (
                     <Tag color="blue" size="small">
-                      {val}
+                      {record.channel?.name || '-'}
                     </Tag>
                   ),
                 },
@@ -351,11 +357,13 @@ const Dashboard: React.FC = () => {
                   render: (status: string) => {
                     const colorMap: Record<string, string> = {
                       success: 'green',
+                      fail: 'red',
                       failed: 'red',
                       pending: 'orange',
                     };
                     const labelMap: Record<string, string> = {
                       success: '成功',
+                      fail: '失败',
                       failed: '失败',
                       pending: '处理中',
                     };
@@ -368,13 +376,16 @@ const Dashboard: React.FC = () => {
                 },
                 {
                   title: '消耗',
-                  dataIndex: 'points_consumed',
+                  dataIndex: 'points_cost',
                   width: 80,
-                  render: (val: number) => (
-                    <Text strong style={{ color: 'var(--accent-red)', fontSize: 13 }}>
-                      {(val / 100).toFixed(2)}
-                    </Text>
-                  ),
+                  render: (val: number | null) => {
+                    const cost = typeof val === 'number' ? val : 0;
+                    return (
+                      <Text strong style={{ color: 'var(--accent-red)', fontSize: 13 }}>
+                        {(cost / 100).toFixed(2)}
+                      </Text>
+                    );
+                  },
                 },
               ]}
               dataSource={recentLogs}

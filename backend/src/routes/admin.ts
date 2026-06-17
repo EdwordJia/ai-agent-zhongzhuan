@@ -15,8 +15,10 @@ router.get('/dashboard', requireAdmin, async (req: AdminAuthRequest, res) => {
     const todayGenerations = await prisma.generation_logs.count({ where: { created_at: { gte: today } } });
     const totalPointsAgg = await prisma.users.aggregate({ _sum: { points: true } });
     const totalPoints = totalPointsAgg._sum.points || 0;
-    const totalRedemption = await prisma.redemption_logs.aggregate({ _sum: { points_after: true } });
-    const totalIssued = (totalRedemption._sum.points_after || 0);
+    const totalRedemption = await prisma.redemption_logs.aggregate({
+      _sum: { points_after: true, points_before: true }
+    });
+    const totalIssued = (totalRedemption._sum.points_after || 0) - (totalRedemption._sum.points_before || 0);
     res.json({
       success: true,
       data: { totalUsers, totalUsed, todayGenerations, totalPoints, totalIssued }
