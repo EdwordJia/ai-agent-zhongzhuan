@@ -1,7 +1,7 @@
 import axios, { type AxiosRequestConfig, type AxiosResponse } from "axios";
 import { Toast } from "@douyinfe/semi-ui";
 
-const BASE_URL = "http://localhost:3001/api";
+const BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:3001/api";
 
 interface ApiEnvelope<T> {
   success: boolean;
